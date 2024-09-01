@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import torch
-from tqdm import tqdm  # 进度条提示模块
+from tqdm import tqdm 
 import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader
@@ -13,13 +13,12 @@ parser = argparse.ArgumentParser(description='parameters')
 
 parser.add_argument('--n_layer', type=int, help='layers',default=2, required=False)
 parser.add_argument('--device', type=int, help='gpu',default=1, required=False)
+parser.add_argument('--dataset', type=str, help='dataset',default='PSM', required=True)
 
 args = parser.parse_args()
 
 torch.cuda.set_device(args.device)
 print(torch.cuda.current_device())
-
-dataset='PSM'
 
 def get_data(dataset):
     if dataset == 'SWaT':
@@ -68,7 +67,7 @@ val_loader=DataLoader(val_set, batch_size=BATCH_SIZE, shuffle=False)
 optimizer = optim.Adam(model.parameters(), lr=LEARNING_RATE)
 scheduler_lr=optim.lr_scheduler.MultiStepLR(optimizer,milestones=[4,9,13],gamma=0.25)
 loss_fn=nn.MSELoss()
-scaler = torch.cuda.amp.GradScaler()  # 采用混合精度，加速训练
+scaler = torch.cuda.amp.GradScaler()  
 
 model,train_loss_all,val_loss_all=train_model(train_loader, val_loader, model, optimizer, loss_fn, scaler, DEVICE,NUM_EPOCHS,scheduler_lr)
 print(' training over!!!! ')
@@ -164,7 +163,7 @@ def get_bestF1(lab, scores, PA=False):
     FNs = ones - TPs
     TNs = zeros - FPs
 
-    N = len(lab) - np.flip(TPs > 0).argmax()  ###anyway:找出label中的1的个数
+    N = len(lab) - np.flip(TPs > 0).argmax()  
     TPRs = TPs[:N] / ones  ###让TPR很大
     PPVs = TPs[:N] / (TPs + FPs)[:N]
     FPRs = FPs[:N] / zeros
