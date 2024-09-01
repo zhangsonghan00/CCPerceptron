@@ -3,10 +3,6 @@ This repository provides supplemental material (source code) for our paper "CCPe
 Please follow the below steps to replicate the results in our paper.
 
 ## Datasets
-Due to the limited resources, we do not provide benchmark datasets. You can find the benchmark datasets we used in the following links.
-```bash
-python3 preprocess.py SMAP MSL SWaT WADI SMD MSDS UCR MBA NAB
-```
 
 ### SWaT dataset
 You can get the SWaT dataset by filling out the form at:
