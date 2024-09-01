@@ -6,7 +6,7 @@ import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader
 from utils import Normalization,TimeSeriesDataset,train_model, plot_result, test, check_accuracy
-from Model import CCPerceptron
+from model.Model import CCPerceptron
 import argparse
 
 parser = argparse.ArgumentParser(description='parameters')
