@@ -6,7 +6,7 @@ import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader
 from utils import Normalization,TimeSeriesDataset,train_model, plot_result, test, check_accuracy
-from model.Model import CCPerceptron
+from model.Model import CRAD
 import argparse
 
 parser = argparse.ArgumentParser(description='parameters')
@@ -55,7 +55,7 @@ val_data = train_data[int(np.floor(.8 * train_data.shape[0])):int(np.floor(train
 train_data=train_data1
 print(train_data.shape)
 
-model=CCPerceptron(window_size,train_data.shape[-1],args.n_layer).to(DEVICE)
+model=CRAD(window_size,train_data.shape[-1],args.n_layer).to(DEVICE)
 
 
 
