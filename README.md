@@ -27,7 +27,7 @@ wget https://raw.githubusercontent.com/khundman/telemanom/master/labeled_anomali
 ```
 
 ## Result Reproduction
-To run CCPerceptron on a dataset, run the following command:
+To run CRAD on a dataset, run the following command:
 ```bash
 python main.py --dataset <dataset> --device <device>
 ```
