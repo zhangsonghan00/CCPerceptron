@@ -1,5 +1,5 @@
-# CCPerceptron
-This repository provides supplemental material (source code) for our paper "CCPerceptron: Revisiting Time Series Anomaly Detection with Contrastive Conjugate Multilayer Perceptron". 
+# CRAD
+This repository provides supplemental material (source code) for our paper "CRAD: A Contamination-Resilient and Efficient Framework for Time Series Anomaly Detection". 
 Please follow the below steps to replicate the results in our paper.
 
 ## Datasets
