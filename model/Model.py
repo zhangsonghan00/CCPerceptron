@@ -5,9 +5,9 @@ import copy
 import random
 from cluster import hierarchical_clustering,Contrastive_Loss
 
-class CCPerceptron(nn.Module):
+class CRAD(nn.Module):
     def __init__(self, seq_len, n_feature, n_layer):
-        super(CCPerceptron, self).__init__()
+        super(CRAD, self).__init__()
         self.seq_len = seq_len
         self.n_feature = n_feature
         self.use_contrastive=False
